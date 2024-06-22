@@ -70,7 +70,7 @@
         </button>
       </div>
       <!-- mob menu -->
-      <div class="mob-menu is-open">
+      <div class="mob-menu">
         <button type="button" class="close-mob-menu">
           <svg class="close-icone" width="8" height="8">
             <use href="./images/icons.svg#icon-close"></use>
@@ -226,7 +226,7 @@
                 width="264"
               />
               <div class="our-team-card-text">
-                <h3 class="title-name title-name-team">Mark Guerrero</h3>
+                <h3 class="title-name-team">Mark Guerrero</h3>
                 <p class="text-main text-name-team">Product Designer</p>
                 <ul class="social-list">
                   <li class="social-item">
@@ -273,7 +273,7 @@
                 width="264"
               />
               <div class="our-team-card-text">
-                <h3 class="title-name title-name-team">Tom Ford</h3>
+                <h3 class="title-name-team">Tom Ford</h3>
                 <p class="text-main text-name-team">Frontend Developer</p>
                 <ul class="social-list">
                   <li class="social-item">
@@ -317,7 +317,7 @@
                 width="264"
               />
               <div class="our-team-card-text">
-                <h3 class="title-name title-name-team">Camila Garcia</h3>
+                <h3 class="title-name-team">Camila Garcia</h3>
                 <p class="text-main text-name-team">Marketing</p>
                 <ul class="social-list">
                   <li class="social-item">
@@ -364,7 +364,7 @@
                 width="264"
               />
               <div class="our-team-card-text">
-                <h3 class="title-name title-name-team">Daniel Wilson</h3>
+                <h3 class="title-name-team">Daniel Wilson</h3>
                 <p class="text-main text-name-team">UI Designer</p>
                 <ul class="social-list">
                   <li class="social-item">
@@ -411,12 +411,46 @@
           <ul class="our-portfolio-list">
             <li class="portfolio-list-item">
               <div class="portfolio-image-wrap">
-                <img
-                  src="./images/banking-app.jpg"
-                  alt="Banking App"
-                  width="288"
-                  class="portfolio_image"
-                />
+                <picture>
+                  <!-- Desktop screen -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/banking-app.jpg    1x,
+                      ./images/banking-app-2x.jpg 2x
+                    "
+                    type="image/jpg"
+                  />
+                  <!-- Tablet screen -->
+
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/banking-app-tab-1x.jpg 1x,
+                      ./images/banking-app-tab-2x.jpg 2x
+                    "
+                    type="image/jpg"
+                  />
+                  <!-- Mobile screen -->
+
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/banking-app-mob-1x.jpg 1x,
+                      ./images/banking-app-mob-2x.jpg 2x
+                    "
+                    type="image/jpg"
+                  />
+                  <img
+                    class="card-img"
+                    src="./images/banking-app.jpg"
+                    alt="Banking App"
+                    width="360"
+                    class="portfolio_image"
+                    loading="lazy"
+                  />
+                </picture>
+
                 <p class="portfolio-cover-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -675,9 +709,12 @@
               ><span class="checkbox-text">
                 <svg class="chek-icone" width="10" height="8">
                   <use href="./images/icons.svg#icone-check"></use>
-                </svg> </span
-              >I accept the terms and conditions of the
-              <a href="" class="privacy-policy">Privacy Policy</a></label
+                </svg>
+              </span>
+              <span class="check-desk"
+                >I accept the terms and conditions of the
+                <a href="" class="privacy-policy">Privacy Policy</a></span
+              ></label
             >
           </div>
           <button type="submit" class="send-btn">Send</button>
